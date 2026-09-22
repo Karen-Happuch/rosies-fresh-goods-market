@@ -1,0 +1,223 @@
+/* Rosie's Fresh Goods Market — Whole Foods story, Apple design language.
+   Rules: weights 400/600 only · bold headline + regular subhead · 28px cards ·
+   pill buttons · big room spacing · no eyebrows · orange spent sparingly. */
+
+:root {
+  --green: #2E7D32;
+  --green-dark: #256628;
+  --deep: #1B4332;
+  --orange: #F77F00;
+  --orange-dark: #DE7200;
+  --cream: #FDF6EC;
+  --ink: #2D2D2D;
+  --ink-soft: #6E6862;
+  --white: #FFFFFF;
+  --radius-card: 28px;
+  --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: "Lato", "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.47;
+  color: var(--ink);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: "Poppins", "Helvetica Neue", Arial, sans-serif; font-weight: 600; }
+
+h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(32px, 4.5vw, 48px);
+  line-height: 1.08;
+  letter-spacing: -0.003em;
+  color: var(--deep);
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 1.17;
+  letter-spacing: 0.009em;
+}
+
+img { display: block; max-width: 100%; }
+
+a { color: var(--green); text-decoration: none; }
+
+:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+
+.container { width: 87.5%; max-width: 1200px; margin: 0 auto; }
+.container.narrow { max-width: 780px; text-align: center; }
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(45, 45, 45, 0.08);
+}
+.nav-inner {
+  width: 87.5%; max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; gap: 32px;
+  height: 52px;
+}
+.wordmark {
+  font-family: "Poppins", sans-serif; font-weight: 600;
+  font-size: 22px; color: var(--deep); letter-spacing: -0.01em;
+}
+.apos { color: var(--orange); }
+.nav-links { display: flex; gap: 28px; margin-left: auto; }
+.nav-links a {
+  font-size: 14px; font-weight: 400; color: var(--ink);
+  letter-spacing: -0.01em; transition: color 0.24s var(--ease);
+}
+.nav-links a:hover { color: var(--green); }
+
+/* ---------- Buttons ---------- */
+.pill {
+  display: inline-block;
+  font-family: "Lato", sans-serif; font-size: 17px; font-weight: 400;
+  padding: 13px 26px; border-radius: 980px;
+  transition: background-color 0.24s var(--ease), transform 0.24s var(--ease);
+}
+.pill:hover { transform: translateY(-1px); }
+.pill-small { font-size: 14px; padding: 8px 18px; }
+.pill-green { background: var(--green); color: var(--white); }
+.pill-green:hover { background: var(--green-dark); }
+.pill-orange { background: var(--orange); color: var(--white); }
+.pill-orange:hover { background: var(--orange-dark); }
+.pill-ghost {
+  background: rgba(255, 255, 255, 0.14); color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+.pill-ghost:hover { background: rgba(255, 255, 255, 0.26); }
+
+.text-link {
+  display: inline-block; margin-top: 24px;
+  font-size: 19px; color: var(--green);
+  transition: color 0.24s var(--ease);
+}
+.text-link:hover { color: var(--green-dark); }
+.text-link-light { color: #A8D5B0; }
+.text-link-light:hover { color: var(--white); }
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative; min-height: 92vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; overflow: hidden;
+}
+.hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(rgba(27, 67, 50, 0.55), rgba(27, 67, 50, 0.72));
+}
+.hero-content { position: relative; padding: 48px 24px; }
+.hero h1 { color: var(--white); }
+.hero-sub {
+  font-family: "Poppins", sans-serif; font-weight: 400;
+  font-size: clamp(20px, 2.6vw, 27px); line-height: 1.2;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 18px;
+}
+.hero-actions {
+  margin-top: 36px;
+  display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;
+}
+
+/* ---------- Rooms ---------- */
+.room { padding: clamp(96px, 13vw, 190px) 0; }
+.room-white { background: var(--white); }
+.room-cream { background: var(--cream); }
+.room-deep { background: var(--deep); }
+.room-deep h2 { color: var(--white); }
+.room-deep .lede { color: rgba(255, 255, 255, 0.86); }
+
+.sub {
+  font-family: "Poppins", sans-serif; font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 25px); line-height: 1.2;
+  color: var(--ink); margin-top: 16px;
+}
+.lede {
+  font-size: 19px; line-height: 1.55; color: var(--ink-soft);
+  max-width: 640px; margin: 24px auto 0;
+}
+.room-deep .lede { color: rgba(255, 255, 255, 0.86); }
+.container.narrow .pill { margin-top: 36px; }
+
+.section-head { text-align: center; margin-bottom: 64px; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--white); border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(27, 67, 50, 0.12);
+}
+.card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.card-body { padding: 32px; }
+.card-body h3 { color: var(--deep); }
+.card-body p { margin-top: 10px; color: var(--ink-soft); }
+.card-body .text-link { margin-top: 16px; font-size: 17px; }
+
+.steps {
+  list-style: none;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+}
+.audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.audience { color: inherit; }
+.audience .card-body { padding: 36px; }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--white); border-top: 1px solid rgba(45, 45, 45, 0.08); padding: 56px 0 40px; }
+.footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
+.footer-mark { font-size: 22px; }
+.footer-tag { margin-top: 6px; font-size: 14px; color: var(--ink-soft); }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 14px; color: var(--ink); transition: color 0.24s var(--ease); }
+.footer-links a:hover { color: var(--green); }
+.footer-legal { margin-top: 40px; }
+.footer-legal p { font-size: 12px; color: var(--ink-soft); }
+
+/* ---------- Reveal on scroll ---------- */
+.reveal { opacity: 0; transform: translateY(28px); }
+.reveal.in {
+  opacity: 1; transform: none;
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+.steps .reveal.in:nth-child(2) { transition-delay: 0.1s; }
+.steps .reveal.in:nth-child(3) { transition-delay: 0.2s; }
+.audience-grid .reveal.in:nth-child(2) { transition-delay: 0.1s; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; }
+  .card, .pill { transition: none; }
+  .card:hover, .pill:hover { transform: none; }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .steps { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .audience-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none; }
+  .hero h1 br { display: none; }
+  .hero { min-height: 80vh; }
+  .card-body, .audience .card-body { padding: 26px; }
+}
