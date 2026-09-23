@@ -25,7 +25,7 @@ body {
   font-size: 17px;
   line-height: 1.47;
   color: var(--ink);
-  background: var(--white);
+  background: var(--cream);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -138,7 +138,7 @@ a { color: var(--green); text-decoration: none; }
 
 /* ---------- Rooms ---------- */
 .room { padding: clamp(96px, 13vw, 190px) 0; }
-.room-white { background: var(--white); }
+.room-white { background: var(--cream); }
 .room-cream { background: var(--cream); }
 .room-deep { background: var(--deep); }
 .room-deep h2 { color: var(--white); }
@@ -160,7 +160,7 @@ a { color: var(--green); text-decoration: none; }
 
 /* ---------- Tiles & Cards ---------- */
 .tile {
-  background: var(--cream); border-radius: var(--radius-card);
+  background: var(--white); border-radius: var(--radius-card);
   padding: clamp(56px, 8vw, 96px) 24px; text-align: center;
 }
 
@@ -184,11 +184,11 @@ a { color: var(--green); text-decoration: none; }
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
 }
 .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.audience { color: inherit; background: var(--cream); }
+.audience { color: inherit; }
 .audience .card-body { padding: 36px; }
 
 /* ---------- Footer ---------- */
-.footer { background: var(--white); border-top: 1px solid rgba(45, 45, 45, 0.08); padding: 56px 0 40px; }
+.footer { background: var(--cream); border-top: 1px solid rgba(45, 45, 45, 0.08); padding: 56px 0 40px; }
 .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap; }
 .footer-mark { font-size: 22px; }
 .footer-tag { margin-top: 6px; font-size: 14px; color: var(--ink-soft); }
