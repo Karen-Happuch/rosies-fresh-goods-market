@@ -88,7 +88,7 @@ a { color: var(--green); text-decoration: none; }
 .pill {
   display: inline-block;
   font-family: "Lato", sans-serif; font-size: 17px; font-weight: 400;
-  padding: 13px 26px; border-radius: 980px;
+  padding: 10px 22px; border-radius: 980px;
   transition: background-color 0.24s var(--ease), transform 0.24s var(--ease);
 }
 .pill:hover { transform: translateY(-1px); }
